@@ -25,7 +25,7 @@ drwxrwxr-x 2 peterc peterc 4096 Sep 25 01:09 uni
 Change to the folder containing the postgres start script:
 
 ```
-$ cd ~/comp3811/postgres
+$ cd ~/comp3811/uni
 ```
 
 The `start_pg.sh` script looks like this:
@@ -148,7 +148,7 @@ This will display 'Ø' instead of an empty string for NULLs in query results. If
 
 You will need to 'import' (`\i filename`) two files to create the tables and populate them with data.
 `DDL.sql` contains the SQL Data Definition Language statments (CREATE TABLE...) to create empty 
-tables. The `smallRelationsInsertFile.sql` file contains SQL INSERT statements to populate the tables with data.
+tables. The `smallRelationsInsertFile.sql` file contains SQL INSERT statements to populate the tables with data. Make sure your current directory has the *.sql files.
 
 ```
 uni=# \i DDL.sql
@@ -192,3 +192,4 @@ You should see
  98345 | Kim        | Elec. Eng. | 80000.00
 (12 rows)
 ```
+You are now ready to use the sample database.
