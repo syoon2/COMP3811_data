@@ -204,4 +204,33 @@ Some postgres meta commands:
 - `\r` clear the query buffer
 - `\g` execute the query buffer (same as `;`)
 
+Show all tables, views, etc. in the database:
+
+```
+uni=# \d
+          List of relations
+ Schema |    Name    | Type  | Owner
+--------+------------+-------+--------
+ public | advisor    | table | peterc
+ public | classroom  | table | peterc
+ public | course     | table | peterc
+ public | department | table | peterc
+ public | instructor | table | peterc
+ public | prereq     | table | peterc
+ public | section    | table | peterc
+ public | student    | table | peterc
+ public | takes      | table | peterc
+ public | teaches    | table | peterc
+ public | time_slot  | table | peterc
+(11 rows)
+```
+
 You are now ready to use the sample database.
+
+Your database instance will continue to run when you log out of the system,
+but you should shut it down:
+
+```
+docker stop peterc-postgres
+```
+Your data will persist on the host's file system and will be re-mounted on the container when you run it again.
