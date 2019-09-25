@@ -25,7 +25,7 @@ Change to the folder containing the postgres start script:
 $ cd ~/comp3811/postgres
 ```
 
-The start_pg.sh script looks like this:
+The `start_pg.sh` script looks like this:
 
 ```shell
 #!/bin/sh
