@@ -123,12 +123,13 @@ The `psql` command is the PostgreSQL interactive terminal. You can type in queri
 Using the IP address of your container, connect using psql:
 
 ```
-psql -h 172.17.0.3 -d uni
+$ psql -h 172.17.0.3 -d uni
 ```
+The option `-h` specifies the host, and the `-d` option specifies the name of the database.
 
 You will be prompted for the password you specified in the start_pg.sh script.
 
-You should see output similar to the following:
+You should see output similar to this:
 ```
 $ psql -h 172.17.0.3 -d uni
 Password for user peterc:
@@ -194,4 +195,13 @@ You should see
  98345 | Kim        | Elec. Eng. | 80000.00
 (12 rows)
 ```
+Some postgres meta commands:
+
+\d Display all tables, views, etc.
+\d table-name display information about a table
+\e edit the query buffer
+\p print the query buffer
+\r clear the query buffer
+\g execute the query buffer (same as ;)
+
 You are now ready to use the sample database.
