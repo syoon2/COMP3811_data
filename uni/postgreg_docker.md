@@ -198,7 +198,7 @@ You should see
 Some postgres meta commands:
 
 - `\d` Display all tables, views, etc.
-- `\d _table-name_` display information about a table
+- `\d table-name` display information about a table
 - `\e` edit the query buffer
 - `\p` print the query buffer
 - `\r` clear the query buffer
