@@ -1,6 +1,8 @@
 # PostgreSQL docker container
 
 ## Step 1. Use SSH to connect to the comp3811 system.
+On Windows, use an SSH client such as PuTTY (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+On a Mac, open a Terminal window and type `ssh hostname-to-connect-to`
 
 ## Step 2: Get the files
 
@@ -82,7 +84,7 @@ $ docker inspect peterc-postgres
 
 You'll get a couple hundred lines of JSON-formatted data, similar to the following (abbreviated)
 
-```
+```json
 [
     {
         "Id": "c392387edf1cb080815d4bb37627f8135f7e41a9479c4d760ee991b004fd6e0b"
