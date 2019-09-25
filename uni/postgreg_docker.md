@@ -15,6 +15,9 @@ Verify that you have the files:
 ```
 $ cd comp3811
 $ ls -l 
+total 8
+-rw-rw-r-- 1 peterc peterc   10 Sep 24 23:15 README.md
+drwxrwxr-x 2 peterc peterc 4096 Sep 25 01:09 uni
 ```
 
 ## Step 3. Start postgres
@@ -51,7 +54,7 @@ echo "Run 'docker inspect ${NAME}' to see information about your container"
 echo "Run 'docker stop ${NAME}' to stop your container"
 ```
 
-Edit the file (nano start_pg.sh) and change the password.
+Edit the file (`nano start_pg.sh`) and change the password.
 This script will start a container with a postgres instance and create a database named 'uni'.
 
 Run the postgres docker container
@@ -113,7 +116,7 @@ The value of "IPAddress", which should be near the end is what you are intereste
 
 ## Step 4. Connect to the database
 
-```psql``` is the PostgreSQL interactive terminal. You can type in queries interactively, issue them to PostgreSQL, and see the query results. It will also take input from a file and provides meta-commands to perform various database functions. Documentation for ```psql``` is https://www.postgresql.org/docs/10/app-psql.html.
+The `psql` command is the PostgreSQL interactive terminal. You can type in queries interactively, issue them to PostgreSQL, and see the query results. It will also take input from a file and provides meta-commands to perform various database functions. Documentation for `psql` is https://www.postgresql.org/docs/10/app-psql.html.
 
 Using the IP address of your container, connect using psql:
 
@@ -134,7 +137,7 @@ Type "help" for help.
 uni=#
 ```
 
-Tip: Create a file named .psqlrc in your home directory containing 
+Tip: Create a file named `.psqlrc` in your home directory containing 
 
 ```
 \pset null 'Ø'
@@ -143,9 +146,9 @@ This will display 'Ø' instead of an empty string for NULLs in query results. If
 
 ## Step 5. Load the sample University data.
 
-You will need to 'import' ('\i filename') two files to create the tables and populate them with data.
-DDL.sql contains the SQL Data Definition Language statments (CREATE TABLE...) to create empty 
-tables. The smallRelationsInsertFile.sql file contains  SQL INSERT statements to populate the tables with data.
+You will need to 'import' (`\i filename`) two files to create the tables and populate them with data.
+`DDL.sql` contains the SQL Data Definition Language statments (CREATE TABLE...) to create empty 
+tables. The `smallRelationsInsertFile.sql` file contains SQL INSERT statements to populate the tables with data.
 
 ```
 uni=# \i DDL.sql
