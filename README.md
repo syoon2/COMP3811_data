@@ -102,3 +102,16 @@ banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name A
           JOIN depositor USING (id) 
           JOIN account USING (account_number);
 ```
+Result:
+```
+  Name   |    City    |   Branch   | Account # | Balance
+---------+------------+------------+-----------+---------
+ Hayes   | Harrison   | Perryridge | A-102     |  400.00
+ Johnson | Palo Alto  | Perryridge | A-102     |  400.00
+ Johnson | Palo Alto  | Brighton   | A-201     |  900.00
+ Jones   | Harrison   | Brighton   | A-217     |  750.00
+ Lindsay | Pittsfield | Redwood    | A-222     |  700.00
+ Smith   | Rye        | Mianus     | A-215     |  700.00
+ Turner  | Stamford   | Round Hill | A-305     |  350.00
+(7 rows)
+```
