@@ -1,6 +1,8 @@
 # PostgreSQL docker container
 
 ## Step 1. Use SSH to connect to the comp3811 system.
+On Windows, use an SSH client such as PuTTY (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+On a Mac, open a Terminal window and type `ssh hostname-to-connect-to`
 
 ## Step 2: Get the files
 
@@ -15,6 +17,9 @@ Verify that you have the files:
 ```
 $ cd comp3811
 $ ls -l 
+total 8
+-rw-rw-r-- 1 peterc peterc   10 Sep 24 23:15 README.md
+drwxrwxr-x 2 peterc peterc 4096 Sep 25 01:09 uni
 ```
 
 ## Step 3. Start postgres
@@ -22,10 +27,10 @@ $ ls -l
 Change to the folder containing the postgres start script:
 
 ```
-$ cd ~/comp3811/postgres
+$ cd ~/comp3811/uni
 ```
 
-The start_pg.sh script looks like this:
+The `start_pg.sh` script looks like this:
 
 ```shell
 #!/bin/sh
@@ -51,7 +56,7 @@ echo "Run 'docker inspect ${NAME}' to see information about your container"
 echo "Run 'docker stop ${NAME}' to stop your container"
 ```
 
-Edit the file (nano start_pg.sh) and change the password.
+Edit the file (`nano start_pg.sh`) and change the password.
 This script will start a container with a postgres instance and create a database named 'uni'.
 
 Run the postgres docker container
@@ -79,7 +84,7 @@ $ docker inspect peterc-postgres
 
 You'll get a couple hundred lines of JSON-formatted data, similar to the following (abbreviated)
 
-```
+```json
 [
     {
         "Id": "c392387edf1cb080815d4bb37627f8135f7e41a9479c4d760ee991b004fd6e0b"
@@ -113,17 +118,18 @@ The value of "IPAddress", which should be near the end is what you are intereste
 
 ## Step 4. Connect to the database
 
-```psql``` is the PostgreSQL interactive terminal. You can type in queries interactively, issue them to PostgreSQL, and see the query results. It will also take input from a file and provides meta-commands to perform various database functions. Documentation for ```psql``` is https://www.postgresql.org/docs/10/app-psql.html.
+The `psql` command is the PostgreSQL interactive terminal. You can type in queries interactively, issue them to PostgreSQL, and see the query results. It will also take input from a file and provides meta-commands to perform various database functions. Documentation for `psql` is https://www.postgresql.org/docs/10/app-psql.html.
 
 Using the IP address of your container, connect using psql:
 
 ```
-psql -h 172.17.0.3 -d uni
+$ psql -h 172.17.0.3 -d uni
 ```
+The option `-h` specifies the host, and the `-d` option specifies the name of the database.
 
 You will be prompted for the password you specified in the start_pg.sh script.
 
-You should see output similar to the following:
+You should see output similar to this:
 ```
 $ psql -h 172.17.0.3 -d uni
 Password for user peterc:
@@ -134,7 +140,7 @@ Type "help" for help.
 uni=#
 ```
 
-Tip: Create a file named .psqlrc in your home directory containing 
+Tip: Create a file named `.psqlrc` in your home directory containing 
 
 ```
 \pset null 'Ø'
@@ -143,9 +149,9 @@ This will display 'Ø' instead of an empty string for NULLs in query results. If
 
 ## Step 5. Load the sample University data.
 
-You will need to 'import' ('\i filename') two files to create the tables and populate them with data.
-DDL.sql contains the SQL Data Definition Language statments (CREATE TABLE...) to create empty 
-tables. The smallRelationsInsertFile.sql file contains  SQL INSERT statements to populate the tables with data.
+You will need to 'import' (`\i filename`) two files to create the tables and populate them with data.
+`DDL.sql` contains the SQL Data Definition Language statments (CREATE TABLE...) to create empty 
+tables. The `smallRelationsInsertFile.sql` file contains SQL INSERT statements to populate the tables with data. Make sure your current directory has the *.sql files.
 
 ```
 uni=# \i DDL.sql
@@ -189,3 +195,42 @@ You should see
  98345 | Kim        | Elec. Eng. | 80000.00
 (12 rows)
 ```
+Some postgres meta commands:
+
+- `\d` Display all tables, views, etc.
+- `\d table-name` display information about a table
+- `\e` edit the query buffer
+- `\p` print the query buffer
+- `\r` clear the query buffer
+- `\g` execute the query buffer (same as `;`)
+
+Show all tables, views, etc. in the database:
+
+```
+uni=# \d
+          List of relations
+ Schema |    Name    | Type  | Owner
+--------+------------+-------+--------
+ public | advisor    | table | peterc
+ public | classroom  | table | peterc
+ public | course     | table | peterc
+ public | department | table | peterc
+ public | instructor | table | peterc
+ public | prereq     | table | peterc
+ public | section    | table | peterc
+ public | student    | table | peterc
+ public | takes      | table | peterc
+ public | teaches    | table | peterc
+ public | time_slot  | table | peterc
+(11 rows)
+```
+
+You are now ready to use the sample database.
+
+Your database instance will continue to run when you log out of the system,
+but you should shut it down:
+
+```
+docker stop peterc-postgres
+```
+Your data will persist on the host's file system and will be re-mounted on the container when you run it again.
