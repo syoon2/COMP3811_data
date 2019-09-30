@@ -10,16 +10,16 @@
 
 ## Using these files
 
-This assumes the IP address of your database is 172.17.0.2
+Let's using the "banking' example. This assumes the IP address of your database is 172.17.0.2
 
-### Create a new database
+### Create a new database named 'banking'
 
 ```
 peterc@comp3811:~/comp3811$ createdb -h 172.17.0.2 banking
 Password:
 ```
 
-### Connect to the database
+### Connect to the 'banking' database
 
 ```
 peterc@comp3811:~/comp3811$ psql -h 172.17.0.2 -d banking
@@ -29,7 +29,7 @@ Type "help" for help.
 banking=#
 ```
 
-### Import the schema and data
+### Import the schema and data from the 'banking.sql' file
 
 ```
 banking=# \i banking.sql
@@ -50,6 +50,9 @@ INSERT 0 1
 ...
 INSERT 0 1
 ```
+
+Note: The first time you do the import, you will see warnings about the tables not existing. 
+If you run the import again, you will drop (delete) all tables and start with a 'fresh' database.
 
 ### The 'banking' database has been created
 ```
