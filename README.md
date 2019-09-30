@@ -67,3 +67,25 @@ banking=# \d
 
 banking=#
 ```
+### Let's run a query to get information about customer who have loans
+```
+banking=# SELECT customer_name AS "Name", customer_city AS "City",
+                 branch_name AS "Branch", loan_number AS "Loan #", 
+                 amount AS "Amount" 
+             FROM customer 
+             JOIN borrower USING (id) JOIN loan USING (loan_number);
+```
+Result:
+```
+   Name   |    City    |   Branch   | Loan # | Amount
+----------+------------+------------+--------+---------
+ Adams    | Pittsfield | Perryridge | L-16   | 1300.00
+ Curry    | Rye        | Mianus     | L-93   |  500.00
+ Hayes    | Harrison   | Perryridge | L-15   | 1500.00
+ Johnson  | Palo Alto  | Downtown   | L-14   | 1500.00
+ Jones    | Harrison   | Downtown   | L-17   | 1000.00
+ Smith    | Rye        | Round Hill | L-11   |  900.00
+ Smith    | Rye        | Redwood    | L-23   | 2000.00
+ Williams | Princeton  | Downtown   | L-17   | 1000.00
+(8 rows)
+```
