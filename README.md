@@ -49,6 +49,8 @@ INSERT 0 1
 INSERT 0 1
 ...
 INSERT 0 1
+
+banking=#
 ```
 
 Note: The first time you do the import, you will see warnings about the tables not existing. 
