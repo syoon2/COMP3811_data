@@ -1,6 +1,6 @@
 # comp3811
 
-* uni/ University databasse files
+* uni/ University database files
 * Databases for Ch. 3/4 Practice Exercises
   * employee.sql
   * insurance.sql
