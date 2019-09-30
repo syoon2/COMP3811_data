@@ -92,7 +92,7 @@ Result:
  Williams | Princeton  | Downtown   | L-17   | 1000.00
 (8 rows)
 ```
-### And similarly, customer account balances
+### Similarly, customer account balances
 ```sql
 banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
                  account_number AS "Account #", balance AS "Balance" 
