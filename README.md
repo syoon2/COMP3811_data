@@ -54,7 +54,7 @@ INSERT 0 1
 Note: The first time you do the import, you will see warnings about the tables not existing. 
 If you run the import again, you will drop (delete) all tables and start with a 'fresh' database.
 
-### The 'banking' database has been created
+### We can see that the 'banking' database has been created
 ```
 banking=# \d
           List of relations
