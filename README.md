@@ -92,6 +92,15 @@ Result:
  Williams | Princeton  | Downtown   | L-17   | 1000.00
 (8 rows)
 ```
+
+We could also write the query as:
+```sql
+ SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
+        loan.loan_number AS "Loan #", amount AS "Amount" 
+        FROM customer, borrower, loan
+        WHERE customer.id = borrower.id AND borrower.loan_number = loan.loan_number;
+```
+
 ### Similarly, customer account balances
 ```sql
 banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
