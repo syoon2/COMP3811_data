@@ -71,11 +71,14 @@ banking=# \d
 banking=#
 ```
 ### Let's run a query to get information about customers who have loans
+We'll need to join three tables to get inforamtion about customers, branches and loans.
+The 'JOIN/USING' syntax is probably the easiest way to write and understand the query.
 ```
 banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
                  loan_number AS "Loan #", amount AS "Amount" 
           FROM customer 
-          JOIN borrower USING (id) JOIN loan USING (loan_number);
+          JOIN borrower USING (id) 
+          JOIN loan USING (loan_number);
 ```
 Result:
 ```
@@ -90,4 +93,12 @@ Result:
  Smith    | Rye        | Redwood    | L-23   | 2000.00
  Williams | Princeton  | Downtown   | L-17   | 1000.00
 (8 rows)
+```
+### And similarly, customer account balances
+```
+banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
+                 account_number AS "Account #", balance AS "Balance" 
+          FROM customer 
+          JOIN depositor USING (id) 
+          JOIN account USING (account_number);
 ```
