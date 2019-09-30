@@ -104,7 +104,7 @@ Result:
 ```
   Name   |    City    |   Branch   | Account # | Balance
 ---------+------------+------------+-----------+---------
- Hayes   | Harrison   | Perryridge | A-102     |  400.00
+ Hayes   | Harrison   | Perryridge | A-101     |  500.00
  Johnson | Palo Alto  | Perryridge | A-102     |  400.00
  Johnson | Palo Alto  | Brighton   | A-201     |  900.00
  Jones   | Harrison   | Brighton   | A-217     |  750.00
