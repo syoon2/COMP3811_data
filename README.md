@@ -10,7 +10,7 @@
 
 ## Using these files
 
-Let's start with the 'banking' example. This assumes the IP address of your database is 172.17.0.2
+Let's start with the 'banking' example. This assumes the IP address of your database container is 172.17.0.2
 
 ### Create a new database named 'banking'
 
