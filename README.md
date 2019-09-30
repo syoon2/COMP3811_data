@@ -67,13 +67,12 @@ banking=# \d
 
 banking=#
 ```
-### Let's run a query to get information about customer who have loans
+### Let's run a query to get information about customers who have loans
 ```
-banking=# SELECT customer_name AS "Name", customer_city AS "City",
-                 branch_name AS "Branch", loan_number AS "Loan #", 
-                 amount AS "Amount" 
-             FROM customer 
-             JOIN borrower USING (id) JOIN loan USING (loan_number);
+banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
+                 loan_number AS "Loan #", amount AS "Amount" 
+          FROM customer 
+          JOIN borrower USING (id) JOIN loan USING (loan_number);
 ```
 Result:
 ```
