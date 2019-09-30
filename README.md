@@ -68,6 +68,10 @@ banking=# \d
  public | loan      | table | peterc
 (6 rows)
 ```
+### Database diagram from dbdiagram.io
+![Banking database](https://github.com/pcrawshaw/comp3811/blob/master/banking.png "Banking database")
+
+
 ### Let's run a query to get information about customers who have loans
 We'll need to join three tables to get inforamtion about customers, branches and loans.
 The 'JOIN/USING' syntax is probably the easiest way to write and understand the query.
