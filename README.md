@@ -15,14 +15,14 @@ Let's start with the 'banking' example. This assumes the IP address of your data
 ### Create a new database named 'banking'
 
 ```
-peterc@comp3811:~/comp3811$ createdb -h 172.17.0.2 banking
+peterc@comp3811:~/comp3811$ **createdb -h 172.17.0.2 banking**
 Password:
 ```
 
 ### Connect to the 'banking' database
 
 ```
-peterc@comp3811:~/comp3811$ psql -h 172.17.0.2 -d banking
+peterc@comp3811:~/comp3811$ **psql -h 172.17.0.2 -d banking**
 Null display is "Ø".
 psql (11.5 (Ubuntu 11.5-1.pgdg18.04+1))
 Type "help" for help.
@@ -32,7 +32,7 @@ banking=#
 ### Import the schema and data from the 'banking.sql' file
 
 ```
-banking=# \i banking.sql
+banking=# **\i banking.sql**
 psql:banking.sql:1: NOTICE:  table "borrower" does not exist, skipping
 DROP TABLE
 psql:banking.sql:2: NOTICE:  table "loan" does not exist, skipping
@@ -56,7 +56,7 @@ If you run the import again, you will drop (delete) all tables and start with a 
 
 ### The 'banking' database has been created
 ```
-banking=# \d
+banking=# **\d**
           List of relations
  Schema |   Name    | Type  | Owner
 --------+-----------+-------+--------
@@ -67,13 +67,11 @@ banking=# \d
  public | depositor | table | peterc
  public | loan      | table | peterc
 (6 rows)
-
-banking=#
 ```
 ### Let's run a query to get information about customers who have loans
 We'll need to join three tables to get inforamtion about customers, branches and loans.
 The 'JOIN/USING' syntax is probably the easiest way to write and understand the query.
-```
+```sql
 banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
                  loan_number AS "Loan #", amount AS "Amount" 
           FROM customer 
@@ -95,7 +93,7 @@ Result:
 (8 rows)
 ```
 ### And similarly, customer account balances
-```
+```sql
 banking=# SELECT customer_name AS "Name", customer_city AS "City", branch_name AS "Branch", 
                  account_number AS "Account #", balance AS "Balance" 
           FROM customer 
