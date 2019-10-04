@@ -7,7 +7,7 @@ On a Mac, open a Terminal window and type `ssh hostname-to-connect-to`
 ## Step 2: Get the files
 
 ```
-$ git pull https://github.com/pcrawshaw/comp3811.git
+$ git clone https://github.com/pcrawshaw/comp3811.git
 ```
 
 This will create a folder called 'comp3811' with the files from https://github.com/pcrawshaw/comp3811
