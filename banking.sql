@@ -80,7 +80,7 @@ insert into account values('A-215', 'Mianus', 700);
 insert into account values('A-217', 'Brighton', 750);
 insert into account values('A-222', 'Redwood', 700);
 insert into account values('A-305', 'Round Hill', 350);
-insert into depositor values('65737', 'A-102');
+insert into depositor values('65737', 'A-101');
 insert into depositor values('17677', 'A-102');
 insert into depositor values('17677', 'A-201');
 insert into depositor values('12345', 'A-217');
