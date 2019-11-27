@@ -42,6 +42,11 @@ class BPlusTree(object):
         return self._root.find(key)
 
     def find_range(self, lb, ub):
+        """
+        lb: lower bound
+        ub: upper bound
+        Find keys such that lb <= key <= ub
+        """
         resultset = []
 
         # You must implement this method
