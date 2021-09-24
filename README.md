@@ -9,7 +9,9 @@ See [Running Postgres with Docker](postgres_docker.md).
 **Q: Can I run PostgreSQL on my Mac/PC/Linux system instead?**
 
 **A:** Yes, see [here](https://www.postgresql.org/download/). Try this if you're comfortable installing
-   software and want to learn more about setting up and configuring a database system. **If you do this,
+   software and want to learn more about setting up and configuring a database system. 
+
+   **If you do this,
    do not leave it until a day or two before an assignment is due! Database systems are complex software
    systems; you will probably run into time-comsuming problems.**
 
