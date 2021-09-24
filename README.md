@@ -1,4 +1,4 @@
-# COMP 3811 Database Systems - Files
+# COMP 3811 (Database Systems) Files
 
 ## PostgreSQL
 

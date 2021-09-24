@@ -1,6 +1,8 @@
 # Changing the year in the sample University tables 
 ## Updating tables when constraints are violated
 
+*** Note: This is no longer required, the files from the textbook web site have been updated. ***
+
 Our sample University data is outdated - the years 2009 and 2010 should be 2017 and 2018.
 We can fix this by simply adding 8 to the year attribute in each table. 
 
