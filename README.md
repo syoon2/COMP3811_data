@@ -1,5 +1,8 @@
 # comp3811
 
+## Running Postgres with Docker
+[Running Postgres with Docker](/uni/postgres_docker.md)
+
 ## Sample/practice files
 
 * uni/ University database files
@@ -11,6 +14,7 @@
 ## Using these files
 
 Let's start with the 'banking' example. This assumes the IP address of your database container is 172.17.0.2
+Change it to yours.
 
 ### Create a new database named 'banking'
 
