@@ -36,7 +36,7 @@ drwxrwxr-x 2 peterc peterc  4096 Sep 24 00:43 uni
 Change to the folder containing the postgres start script:
 
 ```
-$ cd ~/comp3811/uni
+$ cd ~/comp3811
 ```
 
 The `start_pg.sh` script looks like this:
@@ -126,10 +126,16 @@ You'll get a few hundred lines of JSON-formatted data, similar to the following 
 The value of "IPAddress", which should be near the end is what you are interested in. This is the IP address of your postgres container.
 There is a script `pg_get_ip.sh` which will display your container's IP address.
 
-## Step 4. Connect to the database
+## Step 4. Connect to the `uni` database
 
 The `psql` command is the PostgreSQL interactive terminal. You can type in queries interactively, issue them to PostgreSQL, and see the query results. It will also take input from a file and provides meta-commands to perform various database functions. 
 Documentation for `psql` is [https://www.postgresql.org/docs/13/app-psql.html](https://www.postgresql.org/docs/13/app-psql.html).
+
+Change to the `uni` directory:
+
+```
+$ cd ~/comp3811/uni
+```
 
 Using the IP address of *your container*, connect using psql:
 
