@@ -1,18 +1,18 @@
-# comp3811
+# COMP 3811 Database Systems - Files
 
 ## PostgreSQL
 
-We will be using the [PostgreSQL](https://postgresql.org) relational database system, running as a 
+We will be using the [PostgreSQL](https://postgresql.org) relational database system, running in a 
 [Docker](https://docs.docker.com/engine/) container. This will allow you to run your own private instance of PostgreSQL.
 See [Running Postgres with Docker](postgres_docker.md)
 
 ## Sample/practice files
 
-* uni/ University database files
+* `uni/` University database files
 * Databases for Ch. 3/4 Practice Exercises
-  * employee.sql
-  * insurance.sql
-  * banking.sql 
+  * `employee.sql`
+  * `insurance.sql`
+  * `banking.sql` 
 
 ## Using these files
 
