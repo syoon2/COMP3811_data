@@ -6,18 +6,20 @@ We will be using the [PostgreSQL](https://postgresql.org) relational database sy
 [Docker](https://docs.docker.com/engine/) container. This will allow you to run your own private instance of PostgreSQL.
 See [Running Postgres with Docker](postgres_docker.md).
 
-**Q: Can I run PostgreSQL on my Mac/PC/Linux system instead?
+**Q: Can I run PostgreSQL on my Mac/PC/Linux system instead?**
 
 **A:** Yes, see [here](https://www.postgresql.org/download/). Try this if you're comfortable installing
-   software and want to learn more about setting up and configuring a database system.
+   software and want to learn more about setting up and configuring a database system. **If you do this,
+   do not leave it until a day or two before an assignment is due! Database systems are complex software
+   systems; you will probably run into time-comsuming problems.**
 
-**Q: Can I run Docker on my system and then run PostgreSQL in a container?
+**Q: Can I run Docker on my system and then run PostgreSQL in a container?**
 
 **A:** Yes. See [here](https://docs.docker.com/engine/) to get started with Docker. This will require 
    more effort, unless you are already familiar with Docker. You should be able to find 
    plenty of tutorials on Docker and PostgreSQL and How-to's with Google.
 
-**Q: Can I get help making Docker and/or PostgreSQL work on my system?
+**Q: Can I get help making Docker and/or PostgreSQL work on my system?**
 
 **A:** I will try to answer basic questions, otherwise, ask your classmates, or try [this web site](https://google.com).
 
