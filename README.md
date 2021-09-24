@@ -1,10 +1,10 @@
 # comp3811
 
-## Running Postgres with Docker
+## PostgreSQL
 
 We will be using the [PostgreSQL](https://postgresql.org) relational database system, running as a 
 [Docker](https://docker.org) container. This will allow you to run your own private instance of PostgreSQL.
-[Running Postgres with Docker](/uni/postgres_docker.md)
+See [Running Postgres with Docker](postgres_docker.md)
 
 ## Sample/practice files
 
@@ -16,7 +16,7 @@ We will be using the [PostgreSQL](https://postgresql.org) relational database sy
 
 ## Using these files
 
-This assumes you have already set up your PostgreSQL instance [as described here](/uni/postgres_docker.md).
+This assumes you have already set up your PostgreSQL instance [as described here](postgres_docker.md).
 
 Let's start with the 'banking' example. This assumes the IP address of your database container is 172.17.0.2
 Change it to yours.

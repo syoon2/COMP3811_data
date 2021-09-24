@@ -2,9 +2,10 @@
 
 ## Step 1. Use SSH to connect to the comp3811 system.
 On Windows, use an SSH client such as PuTTY (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
-On a Mac, open a Terminal window and type `ssh hostname-to-connect-to`
+Connect to the host `comp3811.mta.ca`.
+On a Mac, open a Terminal window and type `ssh comp3811.mta.ca`
 
-## Step 2: Get the files
+## Step 2: Get files from github
 
 ```
 $ git clone https://github.com/pcrawshaw/comp3811.git
@@ -17,9 +18,17 @@ Verify that you have the files:
 ```
 $ cd comp3811
 $ ls -l 
-total 8
--rw-rw-r-- 1 peterc peterc   10 Sep 24 23:15 README.md
-drwxrwxr-x 2 peterc peterc 4096 Sep 25 01:09 uni
+total 96
+-rw-rw-r-- 1 peterc peterc 40157 Oct 17  2019 banking.png
+-rw-rw-r-- 1 peterc peterc  4275 Sep 30  2019 banking.sql
+-rw-rw-r-- 1 peterc peterc  6138 Sep 30  2019 employee.sql
+-rw-rw-r-- 1 peterc peterc  8101 Sep 30  2019 insurance.sql
+-rw-rw-r-- 1 peterc peterc    80 Sep 24 00:42 pg_get_ip.sh
+-rw-rw-r-- 1 peterc peterc  7043 Sep 24 00:48 postgres_docker.md
+-rw-rw-r-- 1 peterc peterc  4395 Sep 24 00:46 README.md
+-rwxr-xr-x 1 peterc peterc   751 Sep 24 00:40 start_pg.sh
+-rwxr-xr-x 1 peterc peterc    39 Sep 24 00:40 stop_pg.sh
+drwxrwxr-x 2 peterc peterc  4096 Sep 24 00:43 uni
 ```
 
 ## Step 3. Start postgres
@@ -38,7 +47,7 @@ The `start_pg.sh` script looks like this:
 # Run a PostgreSQL docker container
 
 # Set these to your liking
-DBNAME=uni            # This will be the defeult database
+DBNAME=uni            # This will be the default database
 PASSWORD=123456       # Change this!
 
 # Run the postgres container
@@ -47,17 +56,17 @@ PASSWORD=123456       # Change this!
 NAME=${USER}-postgres
 echo "Starting Docker container '${NAME}'"
 docker run --rm --name ${NAME} -d \
-           -e POSTGRES_USER=$USER \
-           -e POSTGRES_PASSWORD=$PASSWORD \
-           -e POSTGRES_DB=$DBNAME \
-           -v /var/lib/docker/mounts/${NAME}:/var/lib/postgresql/data \
+           -e POSTGRES_USER=${USER} \
+           -e POSTGRES_PASSWORD=${PASSWORD} \
+           -e POSTGRES_DB=${DBNAME} \
+           -v ${HOME}/pgdata:/var/lib/postgresql/data \
            postgres
 echo "Run 'docker inspect ${NAME}' to see information about your container"
 echo "Run 'docker stop ${NAME}' to stop your container"
 ```
 
 Edit the file (`nano start_pg.sh`) and change the password.
-This script will start a container with a postgres instance and create a database named 'uni'.
+Running this script will start a container with a postgres instance and create a default database named 'uni'.
 
 Run the postgres docker container
 
@@ -79,10 +88,10 @@ Use the following command (with the name of **your** docker container) to get in
 that postgres is listening on.
 
 ```
-$ docker inspect peterc-postgres
+$ docker inspect yourusername-postgres
 ```
 
-You'll get a couple hundred lines of JSON-formatted data, similar to the following (abbreviated)
+You'll get a few hundred lines of JSON-formatted data, similar to the following (abbreviated)
 
 ```json
 [
@@ -115,17 +124,19 @@ You'll get a couple hundred lines of JSON-formatted data, similar to the followi
 ```
 
 The value of "IPAddress", which should be near the end is what you are interested in. This is the IP address of your postgres container.
+There is a script `pg_get_ip.sh` which will display your container's IP address.
 
 ## Step 4. Connect to the database
 
-The `psql` command is the PostgreSQL interactive terminal. You can type in queries interactively, issue them to PostgreSQL, and see the query results. It will also take input from a file and provides meta-commands to perform various database functions. Documentation for `psql` is https://www.postgresql.org/docs/10/app-psql.html.
+The `psql` command is the PostgreSQL interactive terminal. You can type in queries interactively, issue them to PostgreSQL, and see the query results. It will also take input from a file and provides meta-commands to perform various database functions. 
+Documentation for `psql` is [https://www.postgresql.org/docs/13/app-psql.html](https://www.postgresql.org/docs/13/app-psql.html).
 
-Using the IP address of your container, connect using psql:
+Using the IP address of *your container*, connect using psql:
 
 ```
-$ psql -h 172.17.0.3 -d uni
+$ psql -h 172.17.0.2 -d uni
 ```
-The option `-h` specifies the host, and the `-d` option specifies the name of the database.
+The `-h` option specifies the host, and the `-d` option specifies the name of the database.
 
 You will be prompted for the password you specified in the start_pg.sh script.
 
