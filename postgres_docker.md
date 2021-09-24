@@ -1,4 +1,4 @@
-# PostgreSQL docker container
+# PostgreSQL Docker container
 
 ## Step 1. Use SSH to connect to the comp3811 system.
 On Windows, use an SSH client such as PuTTY (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
