@@ -3,7 +3,7 @@
 ## PostgreSQL
 
 We will be using the [PostgreSQL](https://postgresql.org) relational database system, running as a 
-[Docker](https://docker.org) container. This will allow you to run your own private instance of PostgreSQL.
+[Docker](https://docs.docker.com/engine/) container. This will allow you to run your own private instance of PostgreSQL.
 See [Running Postgres with Docker](postgres_docker.md)
 
 ## Sample/practice files

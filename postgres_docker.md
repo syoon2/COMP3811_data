@@ -244,6 +244,11 @@ uni=# \d
 
 You are now ready to use the sample database.
 
+Review the [PostgreSQL documentation](https://www.postgresql.org/docs/13/app-psql.html) to learn
+more about using the `psql` interactive terminal. 
+
+## Step 6. Stop the postgres instance.
+
 Your database instance will continue to run when you log out of the system,
 but you should shut it down:
 
