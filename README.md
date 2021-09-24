@@ -17,8 +17,8 @@ See [Running Postgres with Docker](postgres_docker.md).
    software and want to learn more about setting up and configuring a database system. If you are willing to put
    in the effort, this is a great way to learn more about database systems.
 
-   **If you do this, do not leave it until a day or two before an assignment is due! Database systems 
-   are complex software systems; you will probably run into time-comsuming problems.**
+   **If you do this, do not leave it until a day or two before an assignment is due! A DBMS is a complex 
+   software system; you will probably run into time-comsuming problems.**
 
 **Q: Can I run Docker on my system and then run PostgreSQL in a container?**
 
