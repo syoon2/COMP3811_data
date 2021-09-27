@@ -41,6 +41,11 @@ Change to the folder containing the postgres start script:
 $ cd ~/comp3811
 ```
 
+Edit the `start_pg.sh` file and change the password line (PASSWORD=123456) to something else. 
+Do not use the same password as any of your personal accounts.
+
+You can use the `nano` editor to edit the file. (Type "`nano start_pg.sh`")
+
 The `start_pg.sh` script looks like this:
 
 ```shell
