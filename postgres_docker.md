@@ -3,7 +3,7 @@
 ## Step 1. Use SSH to connect to the comp3811 system.
 On Windows, use an SSH client such as PuTTY (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 Connect to the host `comp3811.mta.ca`.
-On a Mac, open a Terminal window and type `ssh comp3811.mta.ca`
+On a Mac, open a Terminal window and type `ssh comp3811.mta.ca`. Use your MTA username and password to log in.
 
 ## Step 2: Get files from github
 
