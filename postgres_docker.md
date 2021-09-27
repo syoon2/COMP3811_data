@@ -5,6 +5,8 @@ On Windows, use an SSH client such as PuTTY (https://www.chiark.greenend.org.uk/
 Connect to the host `comp3811.mta.ca`.
 On a Mac, open a Terminal window and type `ssh comp3811.mta.ca`. Use the username and password you have received for this system.
 
+Help installing Putty on Windows: https://phoenixnap.com/kb/install-putty-on-windows
+
 ## Step 2: Get files from github
 
 ```
