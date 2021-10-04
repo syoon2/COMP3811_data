@@ -2,18 +2,23 @@
 
 ## PostgreSQL
 
-We will be using the [PostgreSQL](https://postgresql.org) relational database system, running in a 
+### Docker on comp3811.mta.ca
+
+For most of our work in this course we will use the [PostgreSQL](https://postgresql.org) relational database system. 
+We have an Ubuntu Linux server called comp3811.mta.ca which you can use to run PostgreSQL in a 
 [Docker](https://docs.docker.com/engine/) container. This will allow you to run your own private instance of PostgreSQL.
 See [Running Postgres with Docker](postgres_docker.md).
+
+### Run PostgreSQL on your own computer
 
 **Q: Can I run PostgreSQL on my Mac/PC/Linux system instead?**
 
 **A:** Yes, see [here](https://www.postgresql.org/download/). Try this if you're comfortable installing
-   software and want to learn more about setting up and configuring a database system. 
+   software and want to learn more about setting up and configuring a database system. If you are willing to put
+   in the effort, this is a great way to learn more about database systems.
 
-   **If you do this,
-   do not leave it until a day or two before an assignment is due! Database systems are complex software
-   systems; you will probably run into time-comsuming problems.**
+   **If you do this, do not leave it until a day or two before an assignment is due! A DBMS is a complex 
+   software system; you will probably run into time-comsuming problems.**
 
 **Q: Can I run Docker on my system and then run PostgreSQL in a container?**
 

@@ -3,7 +3,9 @@
 ## Step 1. Use SSH to connect to the comp3811 system.
 On Windows, use an SSH client such as PuTTY (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 Connect to the host `comp3811.mta.ca`.
-On a Mac, open a Terminal window and type `ssh comp3811.mta.ca`
+On a Mac, open a Terminal window and type `ssh comp3811.mta.ca`. Use the username and password you have received for this system.
+
+Help installing Putty on Windows: https://phoenixnap.com/kb/install-putty-on-windows
 
 ## Step 2: Get files from github
 
@@ -38,6 +40,11 @@ Change to the folder containing the postgres start script:
 ```
 $ cd ~/comp3811
 ```
+
+Edit the `start_pg.sh` file and change the password line (`PASSWORD=123456`) to something else. 
+Do not use the same password as any of your personal accounts.
+
+You can use the `nano` editor to edit the file. (Type "`nano start_pg.sh`" at the Linux shell prompt.)
 
 The `start_pg.sh` script looks like this:
 
