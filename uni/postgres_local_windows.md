@@ -10,11 +10,11 @@
     * [Quick Install (build 19041 or higher)](https://docs.microsoft.com/en-us/windows/wsl/install)
     * [Manual Install (build 18362 or higher)](https://docs.microsoft.com/en-us/windows/wsl/install-manual)
  2. Run your Linux Distro (Ubuntu by default) from Start Menu. Set username and password.
- 3. Install ``git`` with the following command in Ubuntu:
+ 3. Install ``git`` and ``psql`` with the following command in Ubuntu:
     ```
-    sudo apt install git
+    sudo apt install git postgresql-client
     ```
-    This is a dependency for getting data files from GitHub.
+    ``git`` is a dependency for getting data files from GitHub and ``postgresql-client`` is a requirement for connecting to PostgreSQL
      * (Optional) Install ``jq`` with following command in Ubuntu:
         ```
         sudo apt install jq
