@@ -1,6 +1,6 @@
 # Running PostgreSQL on Windows 10 using Docker
 
-**THIS DOC ONLY COVERS FOR SETTING UP POSTGRESQL ON WINDOWS 10 / WINDOWS 11 USING DOCKER.**
+**THIS DOC ONLY COVERS ON SETTING UP POSTGRESQL ON WINDOWS 10 / WINDOWS 11 USING DOCKER.**
 
 ## Prerequisites
  * Windows 10 (build 18362 or higher) or Windows 11 (all builds). Use ``winver`` to check your build number if needed.
