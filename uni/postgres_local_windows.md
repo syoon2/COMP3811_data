@@ -9,12 +9,32 @@
  1. Install WSL2 on your system - read one of the following documents from Microsoft.
     * [Quick Install (build 19041 or higher)](https://docs.microsoft.com/en-us/windows/wsl/install)
     * [Manual Install (build 18362 or higher)](https://docs.microsoft.com/en-us/windows/wsl/install-manual)
- 2. Install Docker Desktop with WSL 2 backend enabled: see this [documentation](https://docs.docker.com/desktop/windows/wsl/) from Docker.
+ 2. Install [Docker Desktop](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe) with WSL 2 backend enabled: see this [documentation](https://docs.docker.com/desktop/windows/wsl/) from Docker.
  3. In ``cmd``, run
     ```
     docker pull postgres
     ```
-    This downloads and sets up the [official image](https://hub.docker.com/_/postgres) of PostgreSQL from Docker Hub.
+    This downloads and sets up the [official image](https://hub.docker.com/_/postgres) of PostgreSQL from Docker Hub. If you want to change version of the image, use
+    ```
+    docker pull postgres:(version)
+    ```
+    instead. Note that in-class demo used version 13, and the latest version is version 14.
+ 4. Download and install [pgAdmin 4 for Windows](https://www.pgadmin.org/download/pgadmin-4-windows/).
+ 5. Start PostgreSQL with following command:
+    ```
+    docker run --name (name_of_container) -d -e POSTGRES_USER=(username)
+           -e POSTGRES_PASSWORD=(password)
+           -e POSTGRES_DB=(database_name)
+           -v %USERPROFILE%/pgdata:/var/lib/postgresql/data
+           -p 5432:5432
+           postgres
+    ```
+    Update ``name_of_container``, ``username``, etc. to something of your choice.
+    For running an existing container, use
+    ```
+    docker start (name_of_container)
+    ```
+ 6. Connect to PostgreSQL container using pgAdmin 4. Enter ``127.0.0.1`` or ``localhost`` for Host name/address. Use username and password from step 5. 
 
 
 ## Accessing PostgreSQL from WSL Distro
@@ -32,5 +52,5 @@
         If you are running a different distribution that does not use ``apt``, check [here](https://stedolan.github.io/jq/download/).
  3. Continue your setup with [step 2](postgres_docker.md#Step_2:_Get_files_from_github) of [postgres_docker.md](postgres_docker.md).
 
-## Known issues
-* Accessing PostgreSQL from inside a WSL distro is a pain. A quick workaround for this is specifying the port when executing ``docker run`` with ``-p "5432:5432"``. This workaround makes docker container visible to both Windows and WSL distro - use ``127.0.0.1`` or ``localhost`` as your IP address when connecting to PostgreSQL. You can use ``start_pg_wsl.sh`` which has this workaround applied instead of ``start_pg.sh``.
+### Known issues
+* Accessing PostgreSQL from inside a WSL distro is a pain. A quick workaround for this is specifying the port when executing ``docker run`` with ``-p "5432:5432"``. This workaround makes docker container visible to both Windows and WSL distro - use ``127.0.0.1`` or ``localhost`` as your IP address when connecting to PostgreSQL from either one of the two. You can use ``start_pg_wsl.sh`` which has this workaround applied instead of ``start_pg.sh``.
