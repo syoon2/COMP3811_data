@@ -16,7 +16,6 @@ docker run --rm --name ${NAME} -d \
            -e POSTGRES_PASSWORD=${PASSWORD} \
            -e POSTGRES_DB=${DBNAME} \
            -v ${HOME}/pgdata:/var/lib/postgresql/data \
-           -p "5432:5432" \
            postgres
 echo "Run 'docker inspect ${NAME}' to see information about your container"
 echo "Run 'docker stop ${NAME}' to stop your container"
