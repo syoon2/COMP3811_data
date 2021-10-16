@@ -4,4 +4,4 @@
 # and the container's port 5432 mapped to localhost:5432
 #
 docker run -d --name my_postgres -v my_dbdata:/var/lib/postgresql/data \
-  -p localhost:5432:5432 -e POSTGRES_PASSWORD=123456 postgres:13
+  -p 127.0.0.1:5432:5432 -e POSTGRES_PASSWORD=123456 postgres:13
