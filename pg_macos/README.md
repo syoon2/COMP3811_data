@@ -1,4 +1,4 @@
-# Running postgres on macOS
+# Running PostgreSQL on macOS
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
