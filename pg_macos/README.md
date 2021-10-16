@@ -8,6 +8,7 @@
    Change the password in `pg.sh`.
 
 3. Consider installing the [pgAdmin](https://www.pgadmin.org/) GUI tool.
+   When you add your server to pgAdmin, use 'localhost' for 'Host name/address', and 'postgres' for 'Username'.
 
 4. You can use `psql.sh` to run the container's psql shell. This will connect
    to the default 'postgres' database. Use \c to connect to a different
