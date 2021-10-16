@@ -4,7 +4,8 @@
 
 2. Run the pg.sh script. This will download and run the postgres image.
    Your postgres data will persist in a local docker volume.
-   The container's port 5432 will be mapped to localhost:5432
+   The container's port 5432 will be mapped to localhost:5432.
+   Change the password in pg.sh.
 
 3. Consider installing the [pgAdmin](https://www.pgadmin.org/) GUI tool.
 
