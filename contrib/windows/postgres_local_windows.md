@@ -50,7 +50,7 @@
         ```
         This is a dependency for using ``pq_get_ip.sh``.
         If you are running a different distribution that does not use ``apt``, check [here](https://stedolan.github.io/jq/download/).
- 3. Continue your setup with [step 2](../../postgres_docker.md#Step_2:_Get_files_from_github) of [postgres_docker.md](../../postgres_docker.md).
+ 3. Continue your setup with [step 2](../../postgres_docker.md#step-2-get-files-from-github) of [postgres_docker.md](../../postgres_docker.md).
 
 ### Known issues
 * Accessing PostgreSQL from inside a WSL distro is a pain. A quick workaround for this is specifying the port when executing ``docker run`` with ``-p 5432:5432``. This workaround makes docker container visible to both Windows and WSL distro - use ``127.0.0.1`` or ``localhost`` as your IP address when connecting to PostgreSQL from either one of the two. You can use ``start_pg_wsl.sh`` which has this workaround applied instead of ``start_pg.sh``.
