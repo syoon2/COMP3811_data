@@ -6,6 +6,11 @@ select * from
      from in_dep) as d;
 
 select * from
-  (select id,name from emp1) as one
+  (select * from emp1) as one
   natural join
-  (select name,street,city,salary from emp2) as two;
+  (select * from emp2) as two;
+
+select * from
+  (select * from emp3) as one
+  natural join
+  (select * from emp4) as two;
