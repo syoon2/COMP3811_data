@@ -2,7 +2,7 @@
    does not exist in the time_slot table */
 
 
-/* 1. function that returns a trigger */
+/* 1. Function that returns a trigger */
 create or replace function timeslot_check1() returns trigger as
 $sep$
 begin
