@@ -100,18 +100,20 @@ Copy the output file to the container's file system
 hduser@c1631ce569e8:~$ hdfs dfs -get /output/part-r-00000 wordcount-output.txt
 ```
 
-# Exit the container
+## Exit the container
 ```
 hduser@c1631ce569e8:~$ exit
 ```
 
-# Copy output file to the comp3811 Linux file system
+## Copy output file to the comp3811 Linux file system
 ```
 $ docker cp ${USER}-hadoop:/home/hduser/wordcount-output.txt wordcount-output.txt
 ```
 
-# Stop the container
+## Stop the container
 ```
 $ ./stop_hadoop.sh
 ```
 
+# Other examples
+You can find some other examples in ~/hadoop-3.3.0/share/hadoop/mapreduce (inside the container).
