@@ -7,10 +7,10 @@ Based on [https://github.com/rancavil/hadoop-single-node-cluster](https://github
 Log in to the comp3811 system with SSH
 
 NOTE: Commands run from the comp3811 Linux shell are shown below with 
-`$` as the prompt, while commands run inside the container are show with
-a prompt of the form `hduser@c1631ce569e8:~$`.
+`$` as the prompt, while commands run inside the container are shown with
+a prompt like `hduser@c1631ce569e8:~$`.
 
-NOTE: Files that you copy to the container will disappear after the container is stopped. Save your work.
+*NOTE: Files that you copy to the container will disappear after the container is stopped. Save your work.*
 
 ## Update your copy of the comp3811 git repository
 ```
@@ -51,12 +51,9 @@ $ docker cp WordCount.java ${USER}-hadoop:/home/hduser
 $ docker exec -it ${USER}-hadoop bash
 ```
 
-## Build WordCount. This will compile into .class files and package them in a JAR file (wordcount.jar)
+## Build WordCount. This will compile into .class files and package them in a JAR file named `wordcount.jar`
 ```
-hduser@c1631ce569e8:~$ export HADOOP_HOME=/usr/local/hadoop-3.2.1
-hduser@c1631ce569e8:~$ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-hduser@c1631ce569e8:~$ javac -classpath `${HADOOP_HOME}/bin/hadoop classpath` WordCount.java
-hduser@c1631ce569e8:~$ jar cf wordcount.jar WordCount*.class
+hduser@c1631ce569e8:~$ ./build.sh
 ```
 
 ## Create a folder on the HDFS filesystem
@@ -66,8 +63,8 @@ hduser@c1631ce569e8:~$ hdfs dfs -mkdir /input
 
 ## Copy files to HDFS
 
-There is a docker volume named 'words' mapped to the /mnt folder on the container's file system.
-Copy input files from the container's /mnt folder to the /input folder on HDFS
+There is a docker volume named *words* mapped to the `/mnt` folder on the container's file system.
+Copy input files from the container's `/mnt` folder to the `/input` folder on HDFS
 ```
 hduser@c1631ce569e8:~$ hdfs dfs -put /mnt/*.txt /input
 ```
@@ -89,7 +86,7 @@ Look for your output file on HDFS in /output
 hduser@c1631ce569e8:~$ hdfs dfs -ls /output
 ```
 
-Look at the output file. Use -tail to see the end of the file and -cat to see it all.
+Look at the output file. Use `hdfs dfs -tail` to see the end of the file and `hdfs dfs -cat` to see it all.
 ```
 hduser@c1631ce569e8:~$ hdfs dfs -head /output/part-r-00000
 ```
