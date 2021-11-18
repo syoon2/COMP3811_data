@@ -1,9 +1,12 @@
-# Docker Hadoop Container
+# Single Node Hadoop Docker Container
 
-## Connect to comp38111.mta.ca
-Log in to comp3811.mta.ca with SSH
+This shows you how to run a single node docker container on comp3811 system.
+Based on [https://github.com/rancavil/hadoop-single-node-cluster](https://github.com/rancavil/hadoop-single-node-cluster)
 
-NOTE: Commands run from the comp3811.mta.ca Linux shell are shown below with 
+## Connect to the comp3811 system
+Log in to the comp3811 system with SSH
+
+NOTE: Commands run from the comp3811 Linux shell are shown below with 
 `$` as the prompt, while commands run inside the container are show with
 a prompt of the form `hduser@c1631ce569e8:~$`.
 
@@ -101,7 +104,7 @@ hduser@c1631ce569e8:~$ hdfs dfs -get /output/part-r-00000 wordcount-output.txt
 hduser@c1631ce569e8:~$ exit
 ```
 
-# Copy output file to the comp3811.mta.ca Linux file system
+# Copy output file to the comp3811 Linux file system
 ```
 $ docker cp ${USER}-hadoop:/home/hduser/wordcount-output.txt wordcount-output.txt
 ```
