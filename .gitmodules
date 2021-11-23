@@ -1,4 +1,3 @@
 [submodule "contrib/multinodeHadoopDocker"]
 	path = contrib/multinodeHadoopDocker
 	url = https://github.com/syoon2/hadoopCluster
-	branch = main
